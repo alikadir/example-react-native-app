@@ -8,18 +8,10 @@
 
 import 'react-native-gesture-handler';
 import React from 'react';
-
-import { NavigationContainer } from '@react-navigation/native';
-import { ScrollView, Text, View, StyleSheet } from 'react-native';
-import { style, width } from 'styled-system';
-import Rainbow from './components/common/Rainbow';
+import Routing from './components/layout/Routing';
 
 const App: () => React$Node = () => {
-  return (
-    <NavigationContainer>
-      <Rainbow />
-    </NavigationContainer>
-  );
+  return <Routing />;
 };
 
 export default App;

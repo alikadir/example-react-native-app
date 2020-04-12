@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="ReactNativeClear" pattern="!file[FirstReactNativeApp]:.idea//*&amp;&amp;!file[FirstReactNativeApp]:__tests__//*&amp;&amp;!file:.buckconfig&amp;&amp;!file:.eslintrc.js&amp;&amp;!file:.flowconfig&amp;&amp;!file:.gitattributes&amp;&amp;!file:.gitignore&amp;&amp;!file:.prettierrc.js&amp;&amp;!file:.watchmanconfig&amp;&amp;!file:app.json&amp;&amp;!file:babel.config.js&amp;&amp;!file:metro.config.js&amp;&amp;!file:yarn.lock" />
+</component>
