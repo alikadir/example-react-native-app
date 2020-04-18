@@ -1,34 +1,76 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   useWindowDimensions,
   ScrollView,
   Text,
   View,
   Button,
+  Image,
+  FlatList,
+  TouchableOpacity,
+  TouchableHighlight,
 } from 'react-native';
+import { getImage, getLocalImage } from '../../helpers/unsplash';
 
 const Rainbow = props => {
   const window = useWindowDimensions();
 
+  const [imgList, setImgList] = useState([]);
+
+  useEffect(() => {
+    getImage(10)
+      .then(imageList => {
+        setImgList(imageList);
+      })
+      .catch(() => {
+        const localImage = getLocalImage();
+        setImgList([localImage]);
+      });
+  }, []);
   return (
     <ScrollView>
       <ScrollView
-        horizontal={true}
-        pagingEnabled={true}
+        style={{ height: 250 }}
+        horizontal
+        pagingEnabled
+        snapToAlignment={'start'}
+        snapToInterval={window.width + 10}
+        decelerationRate={'fast'}
         showsHorizontalScrollIndicator={false}>
-        {Array(100)
-          .fill()
-          .map((_, i) => (
-            <View
-              key={i}
-              style={{
-                marginBottom: 20,
-                height: 250,
-                width: window.width,
-                backgroundColor: randomColor(),
-              }}
-            />
-          ))}
+        {imgList.map((img, i) => (
+          <View
+            key={i}
+            style={{
+              marginRight: 10,
+              marginBottom: 20,
+              height: 250,
+              width: window.width,
+              backgroundColor: randomColor(),
+            }}>
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate('ImageGallery', {
+                  index: i,
+                  list: imgList,
+                });
+                console.log('Route parameter', {
+                  index: i,
+                  list: imgList,
+                });
+              }}>
+              <Image
+                source={
+                  img?.isLocal
+                    ? img.image
+                    : {
+                        uri: img?.image,
+                      }
+                }
+                style={{ width: window.width, height: 250 }}
+              />
+            </TouchableOpacity>
+          </View>
+        ))}
       </ScrollView>
       <Text style={{ marginRight: 20, marginLeft: 20 }}>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab amet
@@ -79,15 +121,18 @@ const Rainbow = props => {
         iusto odio ratione, saepe sit tempora tenetur.
       </Text>
       <Button
-        title="Back to Home Page"
+        title="Back to Home Pagex"
         onPress={() => {
-          props.navigation.pop();
+          props.navigation.goBack();
         }}
       />
       <Text style={{ margin: 20 }}>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
         dolores eaque eius ipsa ipsum itaque quibusdam rem sit ut vero! Alias
-        earum illo nihil nisi odit, omnis quibusdam sequi totam.{'\n\n'}
+        earum illo nihil nisi odit, omnis quibusdam sequi totam.
+      </Text>
+      <Text>{JSON.stringify(props.route.params)}</Text>
+      <Text style={{ margin: 20 }}>
         Ad asperiores delectus dolorem eligendi explicabo facere fugiat
         inventore magni maxime modi nisi perspiciatis porro quo saepe, sequi
         totam vel! Aliquid architecto ducimus, facere illum itaque odio rem
