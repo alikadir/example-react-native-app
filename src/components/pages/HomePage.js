@@ -7,7 +7,7 @@ const HomePage = props => {
       <Text> HomePage </Text>
       <Text>{'\n'}</Text>
       <Button
-        title="Go to Details"
+        title="Go to Rainbow"
         onPress={() =>
           props.navigation.navigate('Rainbow', {
             param1: 'value1',
@@ -19,6 +19,11 @@ const HomePage = props => {
       <Button
         title="Go to Parallax"
         onPress={() => props.navigation.navigate('Parallax')}
+      />
+      <Text>{'\n'}</Text>
+      <Button
+        title="Go to Pager"
+        onPress={() => props.navigation.navigate('Pager')}
       />
     </View>
   );

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="FirstReactNativeApp.app" target="1.8" />
+      <module name="FirstReactNativeApp.react-native-community_masked-view" target="1.7" />
+      <module name="FirstReactNativeApp.react-native-gesture-handler" target="1.7" />
+      <module name="FirstReactNativeApp.react-native-reanimated" target="1.7" />
+      <module name="FirstReactNativeApp.react-native-safe-area-context" target="1.7" />
+      <module name="FirstReactNativeApp.react-native-screens" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

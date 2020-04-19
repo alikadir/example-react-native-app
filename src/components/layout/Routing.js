@@ -1,10 +1,14 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import {
+  createStackNavigator,
+  TransitionPresets,
+} from '@react-navigation/stack';
 import HomePage from '../pages/HomePage';
 import { NavigationContainer } from '@react-navigation/native';
 import Rainbow from '../common/Rainbow';
 import Parallax from '../common/Parallax';
 import ImageGallery from '../common/ImageGallery';
+import Pager from '../common/Pager';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +27,7 @@ const Routing = props => (
         //options={{ headerShown: false }}
       />
       <Stack.Screen name="ImageGallery" component={ImageGallery} />
+      <Stack.Screen name="Pager" component={Pager} />
     </Stack.Navigator>
   </NavigationContainer>
 );

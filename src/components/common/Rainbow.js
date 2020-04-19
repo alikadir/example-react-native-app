@@ -53,10 +53,6 @@ const Rainbow = props => {
                   index: i,
                   list: imgList,
                 });
-                console.log('Route parameter', {
-                  index: i,
-                  list: imgList,
-                });
               }}>
               <Image
                 source={
