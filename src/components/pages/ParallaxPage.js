@@ -1,11 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
-import { useWindowDimensions, View, Image, Text, Button } from 'react-native';
+import {
+  useWindowDimensions,
+  View,
+  Image,
+  Text,
+  Button,
+  TextInput,
+} from 'react-native';
 import { getImage, getLocalImage } from '../../helpers/unsplash';
+import ActionSheet from 'react-native-actions-sheet';
 
 const ParallaxPage = props => {
   const window = useWindowDimensions();
+
+  const actionSheetRef = useRef();
+
   const [img, setImg] = useState(null);
 
   useEffect(() => {
@@ -68,10 +79,7 @@ const ParallaxPage = props => {
           <Button
             title={'Zoom'}
             onPress={() => {
-              props.navigation.navigate('ImageGallery', {
-                index: 0,
-                list: [img],
-              });
+              actionSheetRef.current.setModalVisible();
             }}
           />
           <Text>
@@ -235,6 +243,24 @@ const ParallaxPage = props => {
             inventore ipsa ipsam magnam, mollitia nam nihil praesentium quae
             recusandae sed soluta vitae, voluptas.
           </Text>
+
+          <ActionSheet
+            ref={actionSheetRef}
+            headerAlwaysVisible
+            gestureEnabled
+            elevation={100}
+            footerAlwaysVisible>
+            <View style={{ margin: 15 }}>
+              <Text>YOUR CUSTOM COMPONENT INSIDE THE ACTIONSHEET</Text>
+              <Text>{'\n'}</Text>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+                aperiam dolor dolores eaque earum error illo impedit iure maxime
+                nam necessitatibus perspiciatis, praesentium quibusdam quidem
+                quod sunt veniam vero voluptatum.
+              </Text>
+            </View>
+          </ActionSheet>
         </View>
       </View>
     </ParallaxScrollView>
