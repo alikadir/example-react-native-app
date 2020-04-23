@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Text, TextInput, View } from 'react-native';
+import { Search, Video } from '../svgs';
+import SearchTextInput from '../common/SearchTextInput';
 
 const FormPage = props => {
   const [data, setData] = useState(null);
@@ -7,10 +9,9 @@ const FormPage = props => {
   return (
     <View>
       <Text>Form</Text>
-      <TextInput
-        style={{ borderWidth: 1, padding: 10, margin: 10, borderRadius: 5 }}
-        placeholder="e-mail"
-      />
+      <View style={{ padding: 15 }}>
+        <SearchTextInput />
+      </View>
     </View>
   );
 };

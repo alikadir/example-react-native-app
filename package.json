@@ -9,7 +9,7 @@
     "test": "jest",
     "lint": "eslint .",
     "pod": "npx pod-install",
-    "svgr": "npx @svgr/cli ./svgs -d ./src/components/svgs --native --svg-props 'className='",
+    "svgr": "npx @svgr/cli ./svgs -d ./src/components/svgs --native --svg-props 'className=' --svgo-config='{ \"plugins\": [{ \"removeViewBox\": false }] }'",
     "my:debug:react": "react-devtools",
     "my:release:ios": "react-native run-ios --configuration Release",
     "my:release:android": "react-native run-android --variant=release"
