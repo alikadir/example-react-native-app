@@ -11,6 +11,11 @@ const HomePage = props => {
         title="Go to Pager"
         onPress={() => props.navigation.navigate('Pager')}
       />
+
+      <Button
+        title="Go to Form"
+        onPress={() => props.navigation.navigate('Form')}
+      />
     </View>
   );
 };

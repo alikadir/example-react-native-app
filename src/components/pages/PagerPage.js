@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { useHeaderHeight } from '@react-navigation/stack';
 
-const Pager = props => {
+const PagerPage = props => {
   const window = useWindowDimensions();
   const headerHeight = useHeaderHeight();
 
@@ -203,4 +203,4 @@ const Pager = props => {
   );
 };
 
-export default Pager;
+export default PagerPage;

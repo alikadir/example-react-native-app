@@ -5,16 +5,15 @@ import {
 } from '@react-navigation/stack';
 import HomePage from '../pages/HomePage';
 import { NavigationContainer } from '@react-navigation/native';
-import Rainbow from '../common/Rainbow';
-import Parallax from '../common/Parallax';
-import ImageGallery from '../common/ImageGallery';
-import Pager from '../common/Pager';
+import RainbowPage from '../pages/RainbowPage';
+import ParallaxPage from '../pages/ParallaxPage';
+import ImageGalleryPage from '../pages/ImageGalleryPage';
+import PagerPage from '../pages/PagerPage';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import SvgCoffee from '../svgs/Coffee';
-import { size } from 'styled-system';
-import { Text, View } from 'react-native';
-import SvgVideo from '../svgs/Video';
-import SvgHeart from '../svgs/Heart';
+
+import { View } from 'react-native';
+import { Coffee, Heart, Video } from '../svgs';
+import FormPage from '../pages/FormPage';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -23,13 +22,14 @@ const StackNavigator = props => (
   <Stack.Navigator initialRouteName="TabNavigator">
     <Stack.Screen name="TabNavigator" component={TabNavigator} />
     <Stack.Screen name="Home" component={HomePage} />
-    <Stack.Screen name="Pager" component={Pager} />
+    <Stack.Screen name="Pager" component={PagerPage} />
+    <Stack.Screen name="Form" component={FormPage} />
 
     <Stack.Screen
       mode="modal"
       headerMode="none"
       name="ImageGallery"
-      component={ImageGallery}
+      component={ImageGalleryPage}
       options={{
         gestureEnabled: true,
         cardOverlayEnabled: true,
@@ -46,13 +46,13 @@ const TabNavigator = props => (
       component={HomePage}
       options={{
         tabBarIcon: ({ focused, color, size }) => {
-          return <SvgVideo width={size} height={size} stroke={color} />;
+          return <Video width={size} height={size} stroke={color} />;
         },
       }}
     />
     <Tab.Screen
       name="Rainbow"
-      component={Rainbow}
+      component={RainbowPage}
       options={{
         tabBarIcon: ({ focused, color, size }) => {
           return (
@@ -72,7 +72,7 @@ const TabNavigator = props => (
                   padding: 15,
                   borderRadius: 50,
                 }}>
-                <SvgCoffee width={size} height={size} stroke="white" />
+                <Coffee width={size} height={size} stroke="white" />
               </View>
             </View>
           );
@@ -81,10 +81,10 @@ const TabNavigator = props => (
     />
     <Tab.Screen
       name="Parallax"
-      component={Parallax}
+      component={ParallaxPage}
       options={{
         tabBarIcon: ({ focused, color, size }) => {
-          return <SvgHeart width={size} height={size} stroke={color} />;
+          return <Heart width={size} height={size} stroke={color} />;
         },
       }}
     />

@@ -5,7 +5,7 @@ import ViewPager from '@react-native-community/viewpager';
 import { SvgUri } from 'react-native-svg';
 import SvgCoffee from '../svgs/Coffee';
 
-const ImageGallery = props => {
+const ImageGalleryPage = props => {
   const window = useWindowDimensions();
   const { params } = props.route;
   const img = params.list[params.index];
@@ -48,4 +48,4 @@ const ImageGallery = props => {
   );
 };
 
-export default ImageGallery;
+export default ImageGalleryPage;

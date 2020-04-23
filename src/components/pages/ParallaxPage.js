@@ -4,7 +4,7 @@ import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import { useWindowDimensions, View, Image, Text, Button } from 'react-native';
 import { getImage, getLocalImage } from '../../helpers/unsplash';
 
-const Parallax = props => {
+const ParallaxPage = props => {
   const window = useWindowDimensions();
   const [img, setImg] = useState(null);
 
@@ -241,4 +241,4 @@ const Parallax = props => {
   );
 };
 
-export default Parallax;
+export default ParallaxPage;

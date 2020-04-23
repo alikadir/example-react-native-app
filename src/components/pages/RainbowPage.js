@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { getImage, getLocalImage } from '../../helpers/unsplash';
 
-const Rainbow = props => {
+const RainbowPage = props => {
   const window = useWindowDimensions();
 
   const [imgList, setImgList] = useState([]);
@@ -48,6 +48,7 @@ const Rainbow = props => {
               backgroundColor: randomColor(),
             }}>
             <TouchableOpacity
+              activeOpacity={1}
               onPress={() => {
                 props.navigation.navigate('ImageGallery', {
                   index: i,
@@ -147,4 +148,4 @@ const randomColor = () => {
   return '#' + r + g + b;
 };
 
-export default Rainbow;
+export default RainbowPage;
