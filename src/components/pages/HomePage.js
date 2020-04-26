@@ -6,15 +6,25 @@ const HomePage = props => {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text> HomePage </Text>
       <Text>{'\n'}</Text>
-
       <Button
         title="Go to Pager"
         onPress={() => props.navigation.navigate('Pager')}
       />
-
       <Button
         title="Go to Form"
         onPress={() => props.navigation.navigate('Form')}
+      />
+      <Button
+        title="Go to Zoom"
+        onPress={() => props.navigation.navigate('Zoom')}
+      />
+      <Button
+        title="Go to Zoom Gallery"
+        onPress={() => props.navigation.navigate('ZoomGallery')}
+      />
+      <Button
+        title="Go to Svg"
+        onPress={() => props.navigation.navigate('Svg')}
       />
     </View>
   );

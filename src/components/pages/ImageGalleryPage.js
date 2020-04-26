@@ -1,50 +1,61 @@
-import React from 'react';
-import { Image, Text, useWindowDimensions, View } from 'react-native';
+import React, { useState } from 'react';
+import { FlatList, Image, Text, useWindowDimensions, View } from 'react-native';
 import ImageZoom from 'react-native-image-pan-zoom';
+
 import ViewPager from '@react-native-community/viewpager';
-import { SvgUri } from 'react-native-svg';
-import SvgCoffee from '../svgs/Coffee';
+import PhotoView from 'react-native-photo-view';
 
 const ImageGalleryPage = props => {
   const window = useWindowDimensions();
   const { params } = props.route;
-  const img = params.list[params.index];
+  const [scroll, setScroll] = useState(true);
+  //const img = params.list[params.index];
   return (
-    <ViewPager style={{ flex: 1 }}>
-      <View
-        style={{
-          padding: 20,
-          width: window.width,
-          backgroundColor: 'lightgreen',
-        }}>
-        <Text>Image Gallery</Text>
-        <SvgUri
-          width={300}
-          height={300}
-          uri="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/heliocentric.svg"
-        />
-        <SvgCoffee width={150} height={150} stroke="purple" />
-      </View>
-      <View>
-        <ImageZoom
-          cropWidth={window.width}
-          cropHeight={window.height}
-          enableDoubleClickZoom
-          imageWidth={window.width}
-          imageHeight={250}>
-          <Image
-            source={
-              img?.isLocal
-                ? img.image
-                : {
-                    uri: img?.image,
-                  }
-            }
-            style={{ width: window.width, height: 250 }}
-          />
-        </ImageZoom>
-      </View>
-    </ViewPager>
+    <FlatList
+      style={{ flex: 1 }}
+      // contentOffset={params.index}
+      horizontal
+      pagingEnabled
+      //  scrollEnabled={scroll}
+      keyExtractor={img => img.index}
+      data={params.list}
+      scrollEnabled
+      renderItem={({ item }) => {
+        console.log(item);
+        return (
+          <ImageZoom
+            style={{ flex: 1 }}
+            onMove={({ scale }) => {
+              if (!scroll && scale === 1) {
+                setScroll(true);
+                console.log('scroll', true);
+                console.log('scale', scale);
+              } else if (scroll && scale !== 1) {
+                setScroll(false);
+                console.log('scroll', false);
+                console.log('scale', scale);
+              }
+              console.log('scroll', scroll);
+            }}
+            cropWidth={window.width}
+            cropHeight={300}
+            doubleClickInterval={300}
+            imageWidth={window.width}
+            imageHeight={300}>
+            <Image
+              source={
+                item?.isLocal
+                  ? item.image
+                  : {
+                      uri: item?.image,
+                    }
+              }
+              style={{ width: window.width, height: 300 }}
+            />
+          </ImageZoom>
+        );
+      }}
+    />
   );
 };
 

@@ -1,4 +1,5 @@
 const token = 'cg7vgx7KmJv5geMd_t8y2gdCD6EWFWmdGv6RpShkpd8';
+import img from '../../images/image-not-found.jpg';
 
 export const getImage = async count => {
   const result = await fetch(
@@ -13,7 +14,7 @@ export const getImage = async count => {
 };
 
 export const getLocalImage = () => ({
-  image: require('../../images/image-not-found.jpg'),
+  image: img,
   description:
     'Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir 🧐',
   isLocal: true,

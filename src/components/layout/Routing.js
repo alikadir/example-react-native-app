@@ -14,6 +14,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View } from 'react-native';
 import { Coffee, Heart, Video } from '../svgs';
 import FormPage from '../pages/FormPage';
+import ZoomPage from '../pages/ZoomPage';
+import ZoomGalleryPage from '../pages/ZoomGalleryPage';
+import SvgPage from '../pages/SvgPage';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -23,7 +26,14 @@ const StackNavigator = props => (
     <Stack.Screen name="TabNavigator" component={TabNavigator} />
     <Stack.Screen name="Home" component={HomePage} />
     <Stack.Screen name="Pager" component={PagerPage} />
-    <Stack.Screen name="Form" component={FormPage} />
+    <Stack.Screen name="Zoom" component={ZoomPage} />
+    <Stack.Screen name="ZoomGallery" component={ZoomGalleryPage} />
+    <Stack.Screen name="Svg" component={SvgPage} />
+    <Stack.Screen
+      name="Form"
+      component={FormPage}
+      options={{ headerShown: false }}
+    />
 
     <Stack.Screen
       mode="modal"

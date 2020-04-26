@@ -6,9 +6,7 @@ import {
   View,
   Button,
   Image,
-  FlatList,
-  TouchableOpacity,
-  TouchableHighlight,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import { getImage, getLocalImage } from '../../helpers/unsplash';
 
@@ -47,8 +45,7 @@ const RainbowPage = props => {
               width: window.width,
               backgroundColor: randomColor(),
             }}>
-            <TouchableOpacity
-              activeOpacity={1}
+            <TouchableWithoutFeedback
               onPress={() => {
                 props.navigation.navigate('ImageGallery', {
                   index: i,
@@ -65,7 +62,7 @@ const RainbowPage = props => {
                 }
                 style={{ width: window.width, height: 250 }}
               />
-            </TouchableOpacity>
+            </TouchableWithoutFeedback>
           </View>
         ))}
       </ScrollView>
