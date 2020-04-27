@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, ScrollView } from 'react-native';
+import StyledView from '../styleds/StyledView';
 
 const HomePage = props => {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <StyledView as={ScrollView} style={{ flex: 1 }}>
       <Text> HomePage </Text>
       <Text>{'\n'}</Text>
       <Button
@@ -26,7 +27,17 @@ const HomePage = props => {
         title="Go to Svg"
         onPress={() => props.navigation.navigate('Svg')}
       />
-    </View>
+      {Array(100)
+        .fill()
+        .map((_, i) => (
+          <Text key={i}>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab,
+            accusantium ad amet corporis impedit in incidunt inventore iste
+            itaque non nulla obcaecati officia porro quaerat, quam quia
+            quibusdam saepe sequi!
+          </Text>
+        ))}
+    </StyledView>
   );
 };
 
