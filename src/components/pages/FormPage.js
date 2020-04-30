@@ -13,7 +13,7 @@ import {
 import SearchTextInput from '../common/SearchTextInput';
 import img from '../../../images/plant.jpg';
 import { marginTop } from 'styled-system';
-import { Back } from '../svgs';
+import { Back, CircuitBoard, ILikeFood } from '../svgs';
 const FormPage = props => {
   const [visible, setVisible] = useState(true);
   const window = useWindowDimensions();
@@ -39,33 +39,24 @@ const FormPage = props => {
           onPress={() => props.navigation.goBack()}>
           <Back width={30} height={30} stroke="green" />
         </TouchableOpacity>
-        <View style={{ marginTop: 100 }}>
+        <View style={{ marginTop: 175 }}>
           <View style={{ padding: 15 }}>
-            <SearchTextInput />
             <Button
               title="show status bar"
               onPress={() => {
                 setVisible(!visible);
               }}
             />
+            <SearchTextInput />
+            <CircuitBoard
+              width={window.width}
+              height={400}
+              // style={{ marginLeft: -0, marginRight: -50 }}
+              stroke={'rgba(208,207,207,0.47)'}
+            />
           </View>
         </View>
       </ImageBackground>
-      <ScrollView
-        // style={{ flex: 1, width: 300, height: 350 }}
-        maximumZoomScale={5}
-        scrollEnabled={true}
-        minimumZoomScale={1}
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}>
-        <Image
-          style={{ height: 300, width: '100%' }}
-          source={{
-            uri:
-              'https://img0.gaadicdn.com/images/car-images/496x206/Lamborghini/Lamborghini-Huracan/Lamborghini-Huracan-Performante/047.jpg',
-          }}
-        />
-      </ScrollView>
     </View>
   );
 };

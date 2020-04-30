@@ -8,6 +8,7 @@ import {
   Text,
   Button,
   TextInput,
+  ScrollView,
 } from 'react-native';
 import { getImage, getLocalImage } from '../../helpers/unsplash';
 import ActionSheet from 'react-native-actions-sheet';
@@ -226,6 +227,21 @@ const ParallaxPage = props => {
             eligendi facere inventore iure laudantium, nisi officiis provident
             quasi, temporibus tenetur veniam voluptatibus.
           </Text>
+          <ScrollView
+            // style={{ flex: 1, width: 300, height: 350 }}
+            maximumZoomScale={5}
+            scrollEnabled={true}
+            minimumZoomScale={1}
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}>
+            <Image
+              style={{ height: 300, width: '100%' }}
+              source={{
+                uri:
+                  'https://img0.gaadicdn.com/images/car-images/496x206/Lamborghini/Lamborghini-Huracan/Lamborghini-Huracan-Performante/047.jpg',
+              }}
+            />
+          </ScrollView>
           <Text>
             A at deleniti, dolorem doloremque expedita id ipsam laudantium
             natus, nemo optio pariatur, quo quos rem repellat rerum tempora
@@ -258,6 +274,13 @@ const ParallaxPage = props => {
                 aperiam dolor dolores eaque earum error illo impedit iure maxime
                 nam necessitatibus perspiciatis, praesentium quibusdam quidem
                 quod sunt veniam vero voluptatum.
+              </Text>
+              <Text>{'\n'}</Text>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Accusantium aliquam assumenda at deleniti dolor, ducimus error
+                illum impedit ipsum maxime neque nostrum optio ratione rem ut
+                voluptatem voluptates. Culpa, eum!
               </Text>
             </View>
           </ActionSheet>

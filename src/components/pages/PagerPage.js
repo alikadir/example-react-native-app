@@ -23,7 +23,7 @@ const PagerPage = props => {
 
   return (
     <ViewPager style={{ flex: 1 }}>
-      <ScrollView pagingEnabled>
+      <ViewPager orientation={'vertical'}>
         <View>
           <Image
             source={{
@@ -66,8 +66,8 @@ const PagerPage = props => {
             </Text>
           </View>
         </View>
-      </ScrollView>
-      <ScrollView pagingEnabled>
+      </ViewPager>
+      <ViewPager orientation={'vertical'}>
         <View>
           <Image
             source={{
@@ -111,7 +111,7 @@ const PagerPage = props => {
             </Text>
           </View>
         </View>
-      </ScrollView>
+      </ViewPager>
       <ViewPager orientation={'vertical'} transitionStyle={'curl'}>
         <View>
           <Image

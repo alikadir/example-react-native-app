@@ -6,18 +6,18 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios --verbose",
     "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint .",
     "pod": "npx pod-install",
     "svgr": "npx @svgr/cli ./svgs -d ./src/components/svgs --native --svg-props 'className=' --svgo-config='{ \"plugins\": [{ \"removeViewBox\": false }] }'",
     "my:debug:react": "react-devtools",
     "my:release:ios": "react-native run-ios --configuration Release",
-    "my:release:android": "react-native run-android --variant=release"
+    "my:release:android": "react-native run-android --variant=release",
+    "test": "jest",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@dudigital/react-native-zoomable-view": "^1.0.15",
     "@react-native-community/masked-view": "^0.1.8",
-    "@react-native-community/viewpager": "^3.3.0",
+    "@react-native-community/viewpager": "^4.0.0",
     "@react-navigation/bottom-tabs": "^5.2.7",
     "@react-navigation/native": "^5.1.5",
     "@react-navigation/stack": "^5.2.10",

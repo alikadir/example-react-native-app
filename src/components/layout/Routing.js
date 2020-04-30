@@ -75,15 +75,27 @@ const TabNavigator = props => (
                 marginBottom: 10,
                 justifyContent: 'center',
                 alignItems: 'center',
+                borderWidth: 1,
+                borderColor: '#e5e5e5',
               }}>
               <View
                 style={{
                   backgroundColor: focused ? 'darkred' : 'red',
                   padding: 15,
                   borderRadius: 50,
+                  zIndex: 1,
                 }}>
                 <Coffee width={size} height={size} stroke="white" />
               </View>
+              <View
+                style={{
+                  position: 'absolute',
+                  backgroundColor: 'white',
+                  width: 75,
+                  height: 70,
+                  top: 17,
+                  zIndex: 0,
+                }}></View>
             </View>
           );
         },

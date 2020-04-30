@@ -5,8 +5,6 @@ import StyledView from '../styleds/StyledView';
 const HomePage = props => {
   return (
     <StyledView as={ScrollView} style={{ flex: 1 }}>
-      <Text> HomePage </Text>
-      <Text>{'\n'}</Text>
       <Button
         title="Go to Pager"
         onPress={() => props.navigation.navigate('Pager')}
