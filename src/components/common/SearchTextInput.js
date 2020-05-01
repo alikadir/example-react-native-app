@@ -34,6 +34,7 @@ const SearchTextInput = props => (
         borderRadius: 5,
       }}
       placeholder="e-mail"
+      {...props}
     />
   </View>
 );

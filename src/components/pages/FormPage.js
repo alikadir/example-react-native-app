@@ -1,21 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   Button,
   ImageBackground,
   StatusBar,
-  Text,
-  Image,
-  ScrollView,
   TouchableOpacity,
   useWindowDimensions,
   View,
+  Animated,
+  Keyboard,
 } from 'react-native';
 import SearchTextInput from '../common/SearchTextInput';
 import img from '../../../images/plant.jpg';
-import { marginTop } from 'styled-system';
-import { Back, CircuitBoard, ILikeFood } from '../svgs';
+import { Back, CircuitBoard } from '../svgs';
 const FormPage = props => {
   const [visible, setVisible] = useState(true);
+
+  const searchBarHeightAnim = useRef(new Animated.Value(175)).current;
+
+  const upAnim = Animated.timing(searchBarHeightAnim, {
+    toValue: 0,
+    duration: 350,
+  });
+
+  const downAnim = Animated.timing(searchBarHeightAnim, {
+    toValue: 175,
+    duration: 350,
+  });
+
   const window = useWindowDimensions();
 
   return (
@@ -39,15 +50,23 @@ const FormPage = props => {
           onPress={() => props.navigation.goBack()}>
           <Back width={30} height={30} stroke="green" />
         </TouchableOpacity>
-        <View style={{ marginTop: 175 }}>
+        <Animated.View style={{ marginTop: searchBarHeightAnim }}>
           <View style={{ padding: 15 }}>
+            <SearchTextInput
+              onFocus={() => {
+                upAnim.start();
+              }}
+              onBlur={() => {
+                downAnim.start();
+              }}
+            />
             <Button
               title="show status bar"
               onPress={() => {
                 setVisible(!visible);
+                Keyboard.dismiss();
               }}
             />
-            <SearchTextInput />
             <CircuitBoard
               width={window.width}
               height={400}
@@ -55,7 +74,7 @@ const FormPage = props => {
               stroke={'rgba(208,207,207,0.47)'}
             />
           </View>
-        </View>
+        </Animated.View>
       </ImageBackground>
     </View>
   );
