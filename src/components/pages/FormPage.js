@@ -4,6 +4,7 @@ import {
   ImageBackground,
   StatusBar,
   TouchableOpacity,
+  Text,
   useWindowDimensions,
   View,
   Animated,
@@ -16,16 +17,33 @@ const FormPage = props => {
   const [visible, setVisible] = useState(true);
 
   const searchBarHeightAnim = useRef(new Animated.Value(175)).current;
+  const patternOpacityAnim = useRef(new Animated.Value(1)).current;
 
-  const upAnim = Animated.timing(searchBarHeightAnim, {
-    toValue: 0,
-    duration: 350,
-  });
+  const upAnim = Animated.parallel([
+    Animated.timing(searchBarHeightAnim, {
+      toValue: 0,
+      duration: 350,
+      useNativeDriver: false,
+    }),
+    Animated.timing(patternOpacityAnim, {
+      toValue: 0,
+      duration: 350,
+      useNativeDriver: false,
+    }),
+  ]);
 
-  const downAnim = Animated.timing(searchBarHeightAnim, {
-    toValue: 175,
-    duration: 350,
-  });
+  const downAnim = Animated.parallel([
+    Animated.timing(searchBarHeightAnim, {
+      toValue: 175,
+      duration: 350,
+      useNativeDriver: false,
+    }),
+    Animated.timing(patternOpacityAnim, {
+      toValue: 1,
+      duration: 350,
+      useNativeDriver: false,
+    }),
+  ]);
 
   const window = useWindowDimensions();
 
@@ -67,12 +85,14 @@ const FormPage = props => {
                 Keyboard.dismiss();
               }}
             />
-            <CircuitBoard
-              width={window.width}
-              height={400}
-              // style={{ marginLeft: -0, marginRight: -50 }}
-              stroke={'rgba(208,207,207,0.47)'}
-            />
+            <Animated.View style={{ opacity: patternOpacityAnim }}>
+              <CircuitBoard
+                width={window.width}
+                height={400}
+                // style={{ marginLeft: -0, marginRight: -50 }}
+                stroke={'rgba(208,207,207,0.47)'}
+              />
+            </Animated.View>
           </View>
         </Animated.View>
       </ImageBackground>

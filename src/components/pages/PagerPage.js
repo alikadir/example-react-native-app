@@ -112,7 +112,7 @@ const PagerPage = props => {
           </View>
         </View>
       </ViewPager>
-      <ViewPager orientation={'vertical'} transitionStyle={'curl'}>
+      <ViewPager orientation={'vertical'} transitionStyle="curl">
         <View>
           <Image
             source={{
@@ -157,7 +157,7 @@ const PagerPage = props => {
           </View>
         </View>
       </ViewPager>
-      <ViewPager orientation={'vertical'} transitionStyle={'curl'}>
+      <ViewPager orientation={'vertical'} transitionStyle="curl">
         <View>
           <Image
             source={{

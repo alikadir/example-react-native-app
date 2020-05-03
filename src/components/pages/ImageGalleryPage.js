@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { FlatList, Image, Text, useWindowDimensions, View } from 'react-native';
 import ImageZoom from 'react-native-image-pan-zoom';
 
-import ViewPager from '@react-native-community/viewpager';
-import PhotoView from 'react-native-photo-view';
-
 const ImageGalleryPage = props => {
   const window = useWindowDimensions();
   const { params } = props.route;

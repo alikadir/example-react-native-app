@@ -18,6 +18,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* FirstReactNativeAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FirstReactNativeAppTests.m */; };
 		54223AC517D6AAA9EC5F9A02 /* libPods-FirstReactNativeApp-FirstReactNativeAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1FF3C862B859E577337FBA /* libPods-FirstReactNativeApp-FirstReactNativeAppTests.a */; };
 		679693348997538397E4B927 /* libPods-FirstReactNativeApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7424A38B26E80B8E26C9FB62 /* libPods-FirstReactNativeApp.a */; };
+		C8D69763245E41C90006109D /* happy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C8D69762245E41C90006109D /* happy.mp3 */; };
 		D261005A8AEA2DDF6E57C554 /* libPods-FirstReactNativeApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E407280B82628F9734F8D0 /* libPods-FirstReactNativeApp-tvOS.a */; };
 		E045E00984AE1160959D2AEE /* libPods-FirstReactNativeApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6A427297544AC0385741AA /* libPods-FirstReactNativeApp-tvOSTests.a */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		6B1FF3C862B859E577337FBA /* libPods-FirstReactNativeApp-FirstReactNativeAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FirstReactNativeApp-FirstReactNativeAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7424A38B26E80B8E26C9FB62 /* libPods-FirstReactNativeApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FirstReactNativeApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85574A5442BFCA6B6F9439DD /* Pods-FirstReactNativeApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstReactNativeApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-FirstReactNativeApp-tvOSTests/Pods-FirstReactNativeApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		C8D69762245E41C90006109D /* happy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = happy.mp3; sourceTree = "<group>"; };
 		E5E407280B82628F9734F8D0 /* libPods-FirstReactNativeApp-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FirstReactNativeApp-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6A427297544AC0385741AA /* libPods-FirstReactNativeApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FirstReactNativeApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -159,6 +161,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				C8D69762245E41C90006109D /* happy.mp3 */,
 				13B07FAE1A68108700A75B9A /* FirstReactNativeApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* FirstReactNativeAppTests */,
@@ -284,6 +287,9 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -338,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8D69763245E41C90006109D /* happy.mp3 in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);

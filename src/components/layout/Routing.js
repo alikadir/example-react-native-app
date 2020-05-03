@@ -17,6 +17,8 @@ import FormPage from '../pages/FormPage';
 import ZoomPage from '../pages/ZoomPage';
 import ZoomGalleryPage from '../pages/ZoomGalleryPage';
 import SvgPage from '../pages/SvgPage';
+import EGazetePage from '../pages/EGazetePage';
+import NotificationPage from '../pages/NotificationPage';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -29,6 +31,8 @@ const StackNavigator = props => (
     <Stack.Screen name="Zoom" component={ZoomPage} />
     <Stack.Screen name="ZoomGallery" component={ZoomGalleryPage} />
     <Stack.Screen name="Svg" component={SvgPage} />
+    <Stack.Screen name="EGazete" component={EGazetePage} />
+    <Stack.Screen name="Notification" component={NotificationPage} />
     <Stack.Screen
       name="Form"
       component={FormPage}
@@ -95,7 +99,8 @@ const TabNavigator = props => (
                   height: 70,
                   top: 17,
                   zIndex: 0,
-                }}></View>
+                }}
+              />
             </View>
           );
         },

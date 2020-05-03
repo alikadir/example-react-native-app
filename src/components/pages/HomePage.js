@@ -25,6 +25,14 @@ const HomePage = props => {
         title="Go to Svg"
         onPress={() => props.navigation.navigate('Svg')}
       />
+      <Button
+        title="Go to E-Gazete"
+        onPress={() => props.navigation.navigate('EGazete')}
+      />
+      <Button
+        title="Go to Notification"
+        onPress={() => props.navigation.navigate('Notification')}
+      />
       {Array(100)
         .fill()
         .map((_, i) => (
