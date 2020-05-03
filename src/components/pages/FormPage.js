@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import SearchTextInput from '../common/SearchTextInput';
 import img from '../../../images/plant.jpg';
-import { Back, CircuitBoard } from '../svgs';
+import { Back, CircuitBoard, Heart } from '../svgs';
 const FormPage = props => {
   const [visible, setVisible] = useState(true);
 
@@ -64,9 +64,21 @@ const FormPage = props => {
           height: 300,
         }}>
         <TouchableOpacity
-          style={{ paddingTop: 50, paddingLeft: 20 }}
+          style={{ paddingTop: 30, paddingLeft: 20 }}
           onPress={() => props.navigation.goBack()}>
           <Back width={30} height={30} stroke="green" />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            position: 'absolute',
+            paddingTop: 30,
+            right: 20,
+          }}
+          onPress={() => {
+            Keyboard.dismiss();
+            setVisible(!visible);
+          }}>
+          <Heart width={30} height={30} stroke="#866439" />
         </TouchableOpacity>
         <Animated.View style={{ marginTop: searchBarHeightAnim }}>
           <View style={{ padding: 15 }}>
@@ -78,18 +90,10 @@ const FormPage = props => {
                 downAnim.start();
               }}
             />
-            <Button
-              title="show status bar"
-              onPress={() => {
-                setVisible(!visible);
-                Keyboard.dismiss();
-              }}
-            />
             <Animated.View style={{ opacity: patternOpacityAnim }}>
               <CircuitBoard
-                width={window.width}
+                width={window.width - 20}
                 height={400}
-                // style={{ marginLeft: -0, marginRight: -50 }}
                 stroke={'rgba(208,207,207,0.47)'}
               />
             </Animated.View>

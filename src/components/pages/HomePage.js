@@ -33,6 +33,10 @@ const HomePage = props => {
         title="Go to Notification"
         onPress={() => props.navigation.navigate('Notification')}
       />
+      <Button
+        title="Go to WebView"
+        onPress={() => props.navigation.navigate('WebView')}
+      />
       {Array(100)
         .fill()
         .map((_, i) => (
