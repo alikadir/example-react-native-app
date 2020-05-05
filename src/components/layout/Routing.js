@@ -20,6 +20,7 @@ import SvgPage from '../pages/SvgPage';
 import EGazetePage from '../pages/EGazetePage';
 import NotificationPage from '../pages/NotificationPage';
 import WebViewPage from '../pages/WebViewPage';
+import ListPage from '../pages/ListPage';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -35,6 +36,7 @@ const StackNavigator = props => (
     <Stack.Screen name="EGazete" component={EGazetePage} />
     <Stack.Screen name="Notification" component={NotificationPage} />
     <Stack.Screen name="WebView" component={WebViewPage} />
+    <Stack.Screen name="List" component={ListPage} />
     <Stack.Screen
       name="Form"
       component={FormPage}

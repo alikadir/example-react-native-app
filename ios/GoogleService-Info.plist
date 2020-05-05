@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>536345339310-tk9s5lamn07tr8hi0p1leui7es8tnmp7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.536345339310-tk9s5lamn07tr8hi0p1leui7es8tnmp7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBmtBFxP-y4CMN4tS-o3oJLEP3h-V7Xjt8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>536345339310</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.facebook.react.uiappy</string>
+	<key>PROJECT_ID</key>
+	<string>akb-sorburaya</string>
+	<key>STORAGE_BUCKET</key>
+	<string>akb-sorburaya.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:536345339310:ios:0aebb58370f678712e943f</string>
+	<key>DATABASE_URL</key>
+	<string>https://akb-sorburaya.firebaseio.com</string>
+</dict>
+</plist>
