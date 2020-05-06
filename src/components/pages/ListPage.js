@@ -1,67 +1,116 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { View, Text, FlatList, Image } from 'react-native';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import {
+  View,
+  Text,
+  FlatList,
+  Image,
+  Linking,
+  Platform,
+  Button,
+} from 'react-native';
 import { Map, Phone } from '../svgs';
+import {
+  Placeholder,
+  PlaceholderMedia,
+  PlaceholderLine,
+  Fade,
+} from 'rn-placeholder';
 
 const ListPage = props => {
   const [list, setList] = useState([]);
   const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(true);
+  const refFlatList = useRef(null);
 
   const loadData = () => {
-    fetch(`https://randomuser.me/api/?page=${page}&results=50&seed=foobar`)
+    setLoading(true);
+    setPage(page + 1);
+    fetch(`https://randomuser.me/api/?page=${page}&results=30&seed=foobar`)
       .then(result => result.json())
       .then(result => {
         console.log(result.results.length);
         setList([...list, ...result.results]);
-        console.log(list);
+        setLoading(false);
       })
       .catch(console.error);
   };
 
   useEffect(() => {
-    async function fetchData() {
+    (async function fetchData() {
       const response = await fetch(
-        'https://randomuser.me/api/?page=0&results=300&seed=foobar',
+        'https://randomuser.me/api/?page=0&results=30&seed=foobar',
       );
       const json = await response.json();
       setList([...json.results]);
-    }
-
-    fetchData();
+      setLoading(false);
+    })();
   }, []);
+
+  const itemRender = ({ item, index }) => (
+    <View style={{ padding: 10, flexDirection: 'row' }}>
+      <Image
+        style={{ width: 75, height: 75, borderRadius: 10 }}
+        source={{ uri: item.picture.large }}
+      />
+      <View style={{ marginLeft: 10, justifyContent: 'space-evenly' }}>
+        <Text style={{ fontSize: 25 }}>
+          {item.name.first} {item.name.last}
+        </Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <Map width={15} height={15} color={'#3999fc'} />
+          <Text
+            onPress={() => {
+              if (Platform.OS === 'ios') {
+                Linking.openURL('maps:?q=' + item.location.country);
+              } else {
+                Linking.openURL('geo:?q=' + item.location.country);
+              }
+            }}
+            style={{ marginLeft: 5, marginRight: 20, color: '#3999fc' }}>
+            {item.location.country}
+          </Text>
+          <Phone width={15} height={15} color={'#39842b'} />
+          <Text
+            style={{ marginLeft: 5, color: '#39842b' }}
+            onPress={() => {
+              Linking.openURL('tel:' + item.phone);
+            }}>
+            {item.phone}
+          </Text>
+        </View>
+        <Text style={{ color: '#717171' }}>
+          {item.email} ({index})
+        </Text>
+      </View>
+    </View>
+  );
 
   return (
     <View style={{ flex: 1 }}>
-      <FlatList
-        data={list}
-        renderItem={({ item, index }) => (
-          <View style={{ padding: 10, flexDirection: 'row' }}>
-            <Image
-              style={{ width: 75, height: 75, borderRadius: 10 }}
-              source={{ uri: item.picture.large }}
-            />
-            <View style={{ marginLeft: 10, justifyContent: 'space-evenly' }}>
-              <Text style={{ fontSize: 25 }}>
-                {item.name.first} {item.name.last}
-              </Text>
-              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <Map width={15} height={15} />
-                <Text
-                  style={{ marginLeft: 5, marginRight: 20, color: '#3999fc' }}>
-                  {item.location.country}
-                </Text>
-                <Phone width={15} height={15} color={'#39842b'} />
-                <Text style={{ marginLeft: 5, color: '#39842b' }}>
-                  {item.phone}
-                </Text>
-              </View>
-              <Text style={{ color: '#717171' }}>
-                {item.email} ({index})
-              </Text>
-            </View>
-          </View>
-        )}
-        keyExtractor={item => item.email}
-      />
+      {!(list.length === 0 && loading) && (
+        <FlatList
+          ref={refFlatList}
+          data={list}
+          renderItem={itemRender}
+          keyExtractor={(item, index) => item.login.uuid + index}
+          onEndReachedThreshold={0}
+          onEndReached={info => {
+            loadData();
+            setTimeout(() => {
+              refFlatList.current.scrollToEnd({ animated: true });
+            }, 500);
+          }}
+        />
+      )}
+      {loading && (
+        <View style={{ padding: 30 }}>
+          <Placeholder Animation={Fade} Left={PlaceholderMedia}>
+            <PlaceholderLine width={80} />
+            <PlaceholderLine />
+            <PlaceholderLine width={30} />
+          </Placeholder>
+        </View>
+      )}
     </View>
   );
 };

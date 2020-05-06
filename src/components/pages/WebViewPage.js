@@ -14,6 +14,8 @@ const WebViewPage = props => {
       'https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_file',
     Video: 'https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_video', //player "playsinline"
     mailto: 'https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_address',
+    Instagram: 'https://www.instagram.com',
+    Twitter: 'https://twitter.com',
   };
 
   return (
