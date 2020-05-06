@@ -9,8 +9,10 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import Routing from './components/layout/Routing';
+import { StatusBar } from 'react-native';
 
 const App: () => React$Node = () => {
+  StatusBar.setBarStyle('dark-content');
   return <Routing />;
 };
 

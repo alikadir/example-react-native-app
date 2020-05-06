@@ -98,7 +98,7 @@ const ListPage = props => {
             loadData();
             setTimeout(() => {
               refFlatList.current.scrollToEnd({ animated: true });
-            }, 500);
+            }, 250);
           }}
         />
       )}
