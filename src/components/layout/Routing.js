@@ -11,7 +11,7 @@ import ImageGalleryPage from '../pages/ImageGalleryPage';
 import PagerPage from '../pages/PagerPage';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { View } from 'react-native';
+import { Button, View } from 'react-native';
 import { Coffee, Heart, Video } from '../svgs';
 import FormPage from '../pages/FormPage';
 import ZoomPage from '../pages/ZoomPage';
@@ -33,7 +33,18 @@ const StackNavigator = props => (
     <Stack.Screen name="Zoom" component={ZoomPage} />
     <Stack.Screen name="ZoomGallery" component={ZoomGalleryPage} />
     <Stack.Screen name="Svg" component={SvgPage} />
-    <Stack.Screen name="EGazete" component={EGazetePage} />
+    <Stack.Screen
+      name="EGazete"
+      component={EGazetePage}
+      options={props => ({
+        title: props?.route?.name || 'MyTitle',
+        headerStyle: { backgroundColor: '#ffdaad' },
+        headerTintColor: '#7d4100',
+        headerRight: () => (
+          <Button onPress={() => props?.navigation?.goBack()} title="Detail" />
+        ),
+      })}
+    />
     <Stack.Screen name="Notification" component={NotificationPage} />
     <Stack.Screen name="WebView" component={WebViewPage} />
     <Stack.Screen name="List" component={ListPage} />
