@@ -1,13 +1,6 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import {
-  View,
-  Text,
-  FlatList,
-  Image,
-  Linking,
-  Platform,
-  Button,
-} from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
+import { View, Text, FlatList, Image, Linking, Platform } from 'react-native';
+
 import { Map, Phone } from '../svgs';
 import {
   Placeholder,
@@ -19,18 +12,16 @@ import {
 const ListPage = props => {
   const [list, setList] = useState([]);
   const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(true);
   const refFlatList = useRef(null);
 
   const loadData = () => {
-    setLoading(true);
     setPage(page + 1);
+
     fetch(`https://randomuser.me/api/?page=${page}&results=30&seed=foobar`)
       .then(result => result.json())
       .then(result => {
         console.log(result.results.length);
         setList([...list, ...result.results]);
-        setLoading(false);
       })
       .catch(console.error);
   };
@@ -42,7 +33,6 @@ const ListPage = props => {
       );
       const json = await response.json();
       setList([...json.results]);
-      setLoading(false);
     })();
   }, []);
 
@@ -87,30 +77,25 @@ const ListPage = props => {
 
   return (
     <View style={{ flex: 1 }}>
-      {!(list.length === 0 && loading) && (
-        <FlatList
-          ref={refFlatList}
-          data={list}
-          renderItem={itemRender}
-          keyExtractor={(item, index) => item.login.uuid + index}
-          onEndReachedThreshold={0}
-          onEndReached={info => {
-            loadData();
-            setTimeout(() => {
-              refFlatList.current.scrollToEnd({ animated: true });
-            }, 250);
-          }}
-        />
-      )}
-      {loading && (
-        <View style={{ padding: 30 }}>
-          <Placeholder Animation={Fade} Left={PlaceholderMedia}>
-            <PlaceholderLine width={80} />
-            <PlaceholderLine />
-            <PlaceholderLine width={30} />
-          </Placeholder>
-        </View>
-      )}
+      <FlatList
+        ref={refFlatList}
+        data={list}
+        renderItem={itemRender}
+        keyExtractor={(item, index) => item.login.uuid + index}
+        ListFooterComponent={() => (
+          <View style={{ padding: 30 }}>
+            <Placeholder Animation={Fade} Left={PlaceholderMedia}>
+              <PlaceholderLine width={80} />
+              <PlaceholderLine />
+              <PlaceholderLine width={30} />
+            </Placeholder>
+          </View>
+        )}
+        onEndReachedThreshold={0.5}
+        onEndReached={info => {
+          loadData();
+        }}
+      />
     </View>
   );
 };
