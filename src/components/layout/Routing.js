@@ -21,6 +21,7 @@ import EGazetePage from '../pages/EGazetePage';
 import NotificationPage from '../pages/NotificationPage';
 import WebViewPage from '../pages/WebViewPage';
 import ListPage from '../pages/ListPage';
+import VideoPage from '../pages/VideoPage';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -47,7 +48,6 @@ const StackNavigator = props => (
     />
     <Stack.Screen name="Notification" component={NotificationPage} />
     <Stack.Screen name="WebView" component={WebViewPage} />
-    <Stack.Screen name="List" component={ListPage} />
     <Stack.Screen
       name="Form"
       component={FormPage}
@@ -64,6 +64,12 @@ const StackNavigator = props => (
         cardOverlayEnabled: true,
         ...TransitionPresets.ModalPresentationIOS,
       }}
+    />
+    <Stack.Screen name="List" component={ListPage} />
+    <Stack.Screen
+      name="Video"
+      component={VideoPage}
+      options={{ headerShown: false }}
     />
   </Stack.Navigator>
 );

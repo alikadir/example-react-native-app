@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, Button, ScrollView } from 'react-native';
+import { Text, View, Button, ScrollView, Image } from 'react-native';
 import StyledView from '../styleds/StyledView';
 
 const HomePage = props => {
@@ -40,6 +40,20 @@ const HomePage = props => {
       <Button
         title="Go to ListView"
         onPress={() => props.navigation.navigate('List')}
+      />
+      <Button
+        title="Go to Video"
+        onPress={() => props.navigation.navigate('Video')}
+      />
+      <Image
+        style={{ width: '100%', height: 500 }}
+        source={{
+          uri:
+            'https://images.unsplash.com/photo-1588847021877-29037eb00cb3?fit=crop&w=500&q=60',
+          headers: {
+            Authorization: 'Bearer xyz',
+          },
+        }}
       />
       {Array(100)
         .fill()

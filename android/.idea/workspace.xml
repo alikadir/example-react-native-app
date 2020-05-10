@@ -1,13 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0cb10ca2-bf24-411c-86ae-9d7f4ac14069" name="Default Changelist" comment="" />
+    <list default="true" id="0cb10ca2-bf24-411c-86ae-9d7f4ac14069" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../src/components/pages/VideoPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../videos/v0.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../videos/v1.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../videos/v2.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../videos/v3.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../videos/v4.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../videos/v5.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../videos/v6.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../videos/v7.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../videos/v8.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../videos/v9.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/layout/Routing.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/components/layout/Routing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/pages/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/components/pages/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../videos/Ornek_0.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../videos/Ornek_0_ss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../videos/Ornek_1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../videos/Ornek_1_ss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../videos/Ornek_2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../videos/Ornek_2_ss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../videos/Ornek_3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../videos/Ornek_3_ss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../videos/Ornek_4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../videos/Ornek_4_ss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../videos/Ornek_5.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../videos/Ornek_5_ss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../videos/Ornek_6.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../videos/Ornek_6_ss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[e1700200461]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -52,6 +84,7 @@
       <option name="DEPLOY_AS_INSTANT" value="false" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -89,6 +122,8 @@
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="32" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -113,6 +148,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="619" y="155" key="#FirstReactNativeApp.app" timestamp="1589066066249">
+      <screen x="0" y="23" width="1920" height="1013" />
+    </state>
+    <state x="619" y="155" key="#FirstReactNativeApp.app/0.23.1920.1013@0.23.1920.1013" timestamp="1589066066249" />
     <state x="427" y="156" key="SettingsEditor" timestamp="1586808111849">
       <screen x="0" y="23" width="1920" height="989" />
     </state>
