@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="09537704-5e9c-4ac3-8495-c0833d6fc8bd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../GoogleService-Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstReactNativeApp/AppDelegate.m" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstReactNativeApp/AppDelegate.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstReactNativeApp/Base.lproj/LaunchScreen.xib" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstReactNativeApp/Base.lproj/LaunchScreen.xib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstReactNativeApp/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstReactNativeApp/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/../Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Podfile.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1bS04wDewD6SlyXdUgc7CdJUU5E" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="09537704-5e9c-4ac3-8495-c0833d6fc8bd" name="Default Changelist" comment="" />
+      <created>1588609999751</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588609999751</updated>
+      <workItem from="1588610002663" duration="28000" />
+      <workItem from="1588710430383" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>
