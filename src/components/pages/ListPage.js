@@ -50,11 +50,12 @@ const ListPage = props => {
           <Map width={15} height={15} color={'#3999fc'} />
           <Text
             onPress={() => {
-              if (Platform.OS === 'ios') {
-                Linking.openURL('maps:?q=' + item.location.country);
-              } else {
-                Linking.openURL('geo:?q=' + item.location.country);
-              }
+              Linking.openURL(
+                Platform.select({
+                  ios: 'maps:?q=' + item.location.country,
+                  android: 'geo:?q=' + item.location.country,
+                }),
+              );
             }}
             style={{ marginLeft: 5, marginRight: 20, color: '#3999fc' }}>
             {item.location.country}
